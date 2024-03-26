@@ -1,0 +1,16 @@
+.header{
+    margin:10px 0 10px 0;
+}
+.inputBox{
+    width: 70%;
+}
+.footF > div{
+    font-size: 12px;
+    float: left;
+}
+.footF{
+    margin-left: 5px;
+}
+.btn-secondary{
+    font-size: 12px;
+}
