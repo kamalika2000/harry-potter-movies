@@ -35,10 +35,9 @@ export class MovieServiceService {
         map(data => data),
         catchError((error) => throwError(error)),
         finalize(() => {
-        console.log("done")
-      })).subscribe((data: any)=>{
+      })).subscribe((data : any)=>{ // not able to provide movies[] type in the place of any, giving error "No overload matches this call." please consider this. 
         this.mainMovieList = data;
-        this.filteredMovieList = [...data]; //JSON.parse(JSON.stringify(data));
+        this.filteredMovieList = [...data];
         this.movieList.next(data);
       })
     } else {
@@ -53,13 +52,12 @@ export class MovieServiceService {
         map(data => data),
         catchError((error) => throwError(error)),
         finalize(() => {
-        console.log("done")
       }) 
       ).subscribe((data: movies) => {
         if(data)
         this.movieDetails.next(data);
         else
-        this.router.navigate(["/movies"]);
+        this.router.navigate(["/movie-listings"]);
       })
     }
     return "";

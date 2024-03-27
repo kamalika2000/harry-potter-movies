@@ -22,11 +22,10 @@ export class MovieListingsComponent {
 
   }
   ngOnInit(){
-    console.log("test"); 
     this.movieService.getMovies();
     this.allList$ = this.movieService.movieList$;
   }
-  filterValueChanges(event: any){
+  filterValueChanges(event: {}){
     let filterData = <movies>{};
     filterData.title = this.title;
     filterData.release_date = this.release_date;
